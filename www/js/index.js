@@ -18,8 +18,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
                                            "http://www.w3.org/2011/web-apps-ws/papers/Nitobi.pdf",
                                            sPath + "theFile.pdf",
                                            function(theFile) {
-                                           console.log("download complete: " + theFile.toURI());
-                                           showLink(theFile.toURI());
+                                           console.log("download complete: " + theFile.toURL());
+                                           showLink(theFile.toURL());
                                            },
                                            function(error) {
                                            console.log("download error source " + error.source);
