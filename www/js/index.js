@@ -1,91 +1,62 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+function onBodyLoad()
+{
+document.addEventListener("deviceready", onDeviceReady, false);
+}
+ 
+    function downloadFile(){
+        window.requestFileSystem(
+                     LocalFileSystem.PERSISTENT, 0, 
+                     function onFileSystemSuccess(fileSystem) {
+                     fileSystem.root.getFile(
+                                 "dummy.html", {create: true, exclusive: false}, 
+                                 function gotFileEntry(fileEntry){
+                                 var sPath = fileEntry.fullPath.replace("dummy.html","");
+                                 var fileTransfer = new FileTransfer();
+                                 fileEntry.remove();
+ 
+                                 fileTransfer.download(
+                                           "http://www.w3.org/2011/web-apps-ws/papers/Nitobi.pdf",
+                                           sPath + "theFile.pdf",
+                                           function(theFile) {
+                                           console.log("download complete: " + theFile.toURI());
+                                           showLink(theFile.toURI());
+                                           },
+                                           function(error) {
+                                           console.log("download error source " + error.source);
+                                           console.log("download error target " + error.target);
+                                           console.log("upload error code: " + error.code);
+                                           }
+                                           );
+                                 }, 
+                                 fail);
+                     }, 
+                     fail);
+ 
     }
-};
-
-
-
-function download(){
-	var file_path;
-    if(device.platform=='Android') {   
-        file_path = "file:///android_asset/www/res/db/";
-        //4 Android
-    } else {
-        file_path = "res//db//";
-        //4 apache//iOS/desktop
+ 
+    function showLink(url){
+        alert(url);
+        var divEl = document.getElementById("ready");
+        var aElem = document.createElement("a");
+        aElem.setAttribute("target", "_blank");
+        aElem.setAttribute("href", url);
+        aElem.appendChild(document.createTextNode("Ready! Click To Open."))
+        divEl.appendChild(aElem);
+ 
     }
-
-	var fileTransfer = new FileTransfer();
-	var uri = encodeURI("http://www.cardtek.com/files/2013/09/sample.pdf");
-	
-	alert(file_path);
-	
-	fileTransfer.download(
-		uri,
-		file_path,
-		function(entry) {
-			$("#res").text("download complete: " + entry.fullPath);
-		},
-		function(error) {
-			$("#res").append("download error source " + error.source);
-			$("#res").append("download error target " + error.target);
-			$("#res").append("upload error code" + error.code);
-		},
-		false,
-		{
-			headers: {
-				"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-			}
-		}
-	);
-};
-
-$( "#btn_download" ).click(function() {
-	download();
-	alert('download done');
-});
+ 
+ 
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+ 
+/* When this function is called, PhoneGap has been initialized and is ready to roll */
+/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+for more details -jm */
+function onDeviceReady()
+{
+// do your thing!
+        downloadFile();
+}
+ 
