@@ -49,19 +49,17 @@ var app = {
 };
 
 
-var file_path;
-function setFilePath() {
-    if(detectAndroid()) {   
+
+function download(){
+	var file_path;
+    if(device.platform=='Android') {   
         file_path = "file:///android_asset/www/res/db/";
         //4 Android
     } else {
         file_path = "res//db//";
         //4 apache//iOS/desktop
     }
-}
 
-function download(){
-	setFilePath();
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI("http://www.cardtek.com/files/2013/09/sample.pdf");
 	
