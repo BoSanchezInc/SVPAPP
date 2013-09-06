@@ -63,6 +63,8 @@ function download(){
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI("http://www.cardtek.com/files/2013/09/sample.pdf");
 	
+	alert(file_path);
+	
 	fileTransfer.download(
 		uri,
 		file_path,
@@ -70,9 +72,9 @@ function download(){
 			$("#res").text("download complete: " + entry.fullPath);
 		},
 		function(error) {
-			$("#res").text("download error source " + error.source);
-			$("#res").text("download error target " + error.target);
-			$("#res").text("upload error code" + error.code);
+			$("#res").append("download error source " + error.source);
+			$("#res").append("download error target " + error.target);
+			$("#res").append("upload error code" + error.code);
 		},
 		false,
 		{
