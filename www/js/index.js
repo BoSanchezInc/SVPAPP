@@ -87,4 +87,5 @@ function download(){
 
 $( "#btn_download" ).click(function() {
 	download();
+	alert('download done');
 });
