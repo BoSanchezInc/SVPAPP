@@ -29,39 +29,26 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <div data-role="page" id="page">
+            <div data-role="header">
+              <h1>Header</h1>
             </div>
-        </div>
+            <div data-role="content">
+              <button data-icon="arrow-d" id="btn_download">Download</button>
+              <p>
+              <span id="res"></span>
+              </p>
+      		</div>
+      <div data-role="footer">
+              <h4>Footer</h4>
+            </div>
+          </div>
+        
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
-			setFilePath();
-			var fileTransfer = new FileTransfer();
-			var uri = encodeURI("http://www.cardtek.com/files/2013/09/sample.pdf");
 			
-			fileTransfer.download(
-				uri,
-				file_path,
-				function(entry) {
-					console.log("download complete: " + entry.fullPath);
-				},
-				function(error) {
-					console.log("download error source " + error.source);
-					console.log("download error target " + error.target);
-					console.log("upload error code" + error.code);
-				},
-				false,
-				{
-					headers: {
-						"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-					}
-				}
-			);
+			
 			
         </script>
     </body>

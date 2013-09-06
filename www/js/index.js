@@ -60,3 +60,31 @@ function setFilePath() {
     }
 }
 
+function download(){
+	setFilePath();
+	var fileTransfer = new FileTransfer();
+	var uri = encodeURI("http://www.cardtek.com/files/2013/09/sample.pdf");
+	
+	fileTransfer.download(
+		uri,
+		file_path,
+		function(entry) {
+			$("#res").text("download complete: " + entry.fullPath);
+		},
+		function(error) {
+			$("#res").text("download error source " + error.source);
+			$("#res").text("download error target " + error.target);
+			$("#res").text("upload error code" + error.code);
+		},
+		false,
+		{
+			headers: {
+				"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+			}
+		}
+	);
+};
+
+$( "#btn_download" ).click(function() {
+	download();
+});
