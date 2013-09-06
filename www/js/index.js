@@ -47,3 +47,16 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+
+var file_path;
+function setFilePath() {
+    if(detectAndroid()) {   
+        file_path = "file:///android_asset/www/res/db/";
+        //4 Android
+    } else {
+        file_path = "res//db//";
+        //4 apache//iOS/desktop
+    }
+}
+
