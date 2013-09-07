@@ -13,13 +13,17 @@
     </head>
     <body onload="onBodyLoad()">
     
-<div data-role="page" data-theme="a">
-    <div data-role="panel" id="mypanel">
-        <!-- panel content goes here -->
-        hi this is a panel.
+<div data-role="page" data-theme="a" >
+	<div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-theme="a">
+		<h3>Default panel options</h3>
+        <p>This panel has all the default options: positioned on the left with the reveal display mode. The panel markup is <em>before</em> the header, content and footer in the source order.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#demo-links" data-rel="close" data-role="button" data-theme="c" data-icon="delete" data-inline="true">Close panel</a>
     </div><!-- /panel -->
-			<div data-role="header" data-position="inline">
+	
+    		<div data-role="header" data-position="inline">
 				<h1>SVP APP</h1>
+                <a href="#leftpanel2" class="jqm-navmenu-link" data-icon="bars" data-iconpos="notext">Navigation</a>				
 			</div>
 			<div data-role="content" data-theme="a">
 				<p>
