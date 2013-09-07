@@ -14,22 +14,15 @@
     <body onload="onBodyLoad()">
     
 <div data-role="page" data-theme="a">
+    <div data-role="panel" id="mypanel">
+        <!-- panel content goes here -->
+        hi this is a panel.
+    </div><!-- /panel -->
 			<div data-role="header" data-position="inline">
 				<h1>SVP APP</h1>
 			</div>
 			<div data-role="content" data-theme="a">
-				<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
-					<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
-				<label for="slider1">Input slider:</label>
-				<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
-				<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-				<legend>Cache settings:</legend>
-				<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
-				<label for="radio-choice-a1">On</label>
-				<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
-				<label for="radio-choice-b1">Off</label>
-				</fieldset>
-                <p>
+				<p>
                     DOWNLOADING FILE...<br />
                     <span id="ready"></span>
                 </p>
