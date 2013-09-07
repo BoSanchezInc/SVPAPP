@@ -4,8 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SVP APP</title>        
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" href="themes/neuralink.min.css" />
+        <link rel="stylesheet" href="themes/neuralink.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
 		<script src="http://debug.build.phonegap.com/target/target-script-min.js#neuralinksvpapp"></script>	
 		<script src="js/jquery-1.9.1.min.js"></script>
@@ -13,17 +12,9 @@
     </head>
     <body onload="onBodyLoad()">
     
-<div data-role="page" data-theme="a" >
-	<div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-theme="a">
-		<h3>Default panel options</h3>
-        <p>This panel has all the default options: positioned on the left with the reveal display mode. The panel markup is <em>before</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" data-role="button" data-theme="c" data-icon="delete" data-inline="true">Close panel</a>
-    </div><!-- /panel -->
-	
+		<div data-role="page" data-theme="d" >
     		<div data-role="header" data-position="inline">
 				<h1>SVP APP</h1>
-                <a href="#leftpanel2" class="jqm-navmenu-link" data-icon="bars" data-iconpos="notext">Navigation</a>				
 			</div>
 			<div data-role="content" data-theme="a">
 				<p>
@@ -31,6 +22,16 @@
                     <span id="ready"></span>
                 </p>
 			</div>
+            <div data-role="footer" data-id="foo1" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="b.html" data-icon="star">Store</a></li>
+                        <li><a href="a.html" data-icon="grid" class="ui-btn-active ui-state-persist">Library</a></li>
+                        <li><a href="c.html" data-icon="gear">Settings</a></li>
+                        <li><a href="d.html" data-icon="plus">More</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
 		</div>
             
             
