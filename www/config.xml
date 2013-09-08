@@ -22,7 +22,7 @@
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/file"/>
-	<feature name="http://plugins.phonegap.com/ChildBrowser/1.0.1" /> 
+
 	<!-- to enable individual permissions use the following examples -->
 	<!--
 	<feature name="http://api.phonegap.com/1.0/network"/>
@@ -67,7 +67,8 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
-
+	<gap:plugin name="com.phonegap.plugins.childbrowser" />
+	
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
