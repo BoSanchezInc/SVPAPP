@@ -1,11 +1,11 @@
 $(document).bind("mobileinit", function(){
-  //apply overrides here
-  $.mobile.allowCrossDomainPages = true;
-  $.mobile.defaultPageTransition = 'none';
-  $.mobile.transitionFallbacks.slideout = "none"
+	//apply overrides here
+	$.mobile.allowCrossDomainPages = true;
+	$.mobile.defaultPageTransition = 'none';
+	$.mobile.transitionFallbacks.slideout = "none"
 });
 
-function onBodyLoad(){
+function init(){
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
  
