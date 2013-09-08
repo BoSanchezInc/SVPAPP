@@ -1,3 +1,9 @@
+$(document).bind("mobileinit", function(){
+  //apply overrides here
+  $.mobile.defaultPageTransition = 'slide';
+  $.mobile.transitionFallbacks.slideout = "none"
+});
+
 function onBodyLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
@@ -53,3 +59,4 @@ function onDeviceReady(){
 // do your thing!
 	downloadFile();
 }
+
