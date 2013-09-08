@@ -2,7 +2,7 @@ $(document).bind("mobileinit", function(){
 	//apply overrides here
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
-	$.mobile.defaultPageTransition = 'none';
+	$.mobile.defaultPageTransition = 'fade';
 	$.mobile.transitionFallbacks.slideout = "none"
 });
 
