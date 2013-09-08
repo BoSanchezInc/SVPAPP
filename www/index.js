@@ -1,6 +1,7 @@
 $(document).bind("mobileinit", function(){
   //apply overrides here
-  $.mobile.defaultPageTransition = 'slide';
+  $.mobile.allowCrossDomainPages = true;
+  $.mobile.defaultPageTransition = 'none';
   $.mobile.transitionFallbacks.slideout = "none"
 });
 
