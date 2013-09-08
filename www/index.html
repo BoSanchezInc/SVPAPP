@@ -4,17 +4,18 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SVP APP</title>        
-        <link rel="stylesheet" href="themes/neuralink.css" />
-		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+		<link rel="stylesheet" href="jquerymobile/jquery.mobile.theme-1.3.2.css" />
+		<link rel="stylesheet" href="jquerymobile/jquery.mobile.structure-1.3.2.css" />
+		<script src="jquerymobile/jquery-1.9.1.min.js"></script>
+		<script src="jquerymobile/jquery.mobile-1.3.2.js"></script>
 		<script src="http://debug.build.phonegap.com/target/target-script-min.js#neuralinksvpapp"></script>	
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/jquery.mobile-1.3.2.min.js"></script>
     </head>
-    <body onload="onBodyLoad()">
+
+<body onload="onBodyLoad()">
     
-		<div data-role="page" data-theme="d" >
+		<div data-role="page" data-theme="d" id="library">
     		<div data-role="header" data-position="inline">
-				<h1>SVP APP</h1>
+				<h1>Library</h1>
 			</div>
 			<div data-role="content" data-theme="a">
 				<p>
@@ -25,17 +26,122 @@
             <div data-role="footer" data-id="foo1" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="b.html" data-icon="star">Store</a></li>
-                        <li><a href="a.html" data-icon="grid" class="ui-btn-active ui-state-persist">Library</a></li>
-                        <li><a href="c.html" data-icon="gear">Settings</a></li>
-                        <li><a href="d.html" data-icon="plus">More</a></li>
+                        <li><a href="#store" data-icon="star">Store</a></li>
+                        <li><a href="#library" data-icon="grid" class="ui-btn-active ui-state-persist">Library</a></li>
+                        <li><a href="#settings" data-icon="gear">Settings</a></li>
+                        <li><a href="#more" data-icon="plus">More</a></li>
                     </ul>
                 </div><!-- /navbar -->
             </div><!-- /footer -->
 		</div>
-            
-            
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        
+        
+<div data-role="page" id="store">
+		  <div data-role="header">
+		    <h1>Store</h1>
+	      </div>
+		  <div data-role="content">
+            <ul data-role="listview">
+                <li><a href="index.html">
+                    <img src="img/album-bb.jpg" />
+                    <h3>Broken Bells</h3>
+                    <p>Broken Bells</p>
+                  </a></li>
+                <li><a href="index.html">
+                    <img src="img/album-hc.jpg" />
+                    <h3>Warning</h3>
+                    <p>Hot Chip</p>
+                </a></li>
+                <li><a href="index.html">
+                    <img src="img/album-p.jpg" />
+                    <h3>Wolfgang Amadeus Phoenix</h3>
+                    <p>Phoenix</p>
+                </a></li>
+                <li><a href="index.html">
+                    <img src="img/album-ok.jpg" />
+                    <h3>Of The Blue Colour Of The Sky</h3>
+                    <p>Ok Go</p>
+                </a></li>
+
+            </ul>          
+          </div>
+            <div data-role="footer" data-id="foo1" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#store" data-icon="star"  class="ui-btn-active ui-state-persist">Store</a></li>
+                        <li><a href="#library" data-icon="grid">Library</a></li>
+                        <li><a href="#settings" data-icon="gear">Settings</a></li>
+                        <li><a href="#more" data-icon="plus">More</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+		</div>
+        
+		<div data-role="page" id="settings">
+		  <div data-role="header">
+		    <h1>Settings</h1>
+	      </div>
+		  <div data-role="content">
+			<ul data-role="listview">
+				<li><a href="index.html">Account Into</a></li>
+				<li><a href="index.html">Login</a></li>
+				<li><a href="index.html">Logout</a></li>
+			</ul>          
+          </div>
+            <div data-role="footer" data-id="foo1" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#store" data-icon="star">Store</a></li>
+                        <li><a href="#library" data-icon="grid">Library</a></li>
+                        <li><a href="#settings" data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
+                        <li><a href="#more" data-icon="plus">More</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+		</div>
+        
+		<div data-role="page" id="more">
+		  <div data-role="header">
+		    <h1>More</h1>
+	      </div>
+		  <div data-role="content">
+			<ul data-role="listview">
+				<li><a href="index.html">Acura</a></li>
+				<li><a href="index.html">Audi</a></li>
+				<li><a href="index.html">BMW</a></li>
+				<li><a href="index.html">Cadillac</a></li>
+				<li><a href="index.html">Chrysler</a></li>
+				<li><a href="index.html">Dodge</a></li>
+				<li><a href="index.html">Ferrari</a></li>
+				<li><a href="index.html">Ford</a></li>
+				<li><a href="index.html">GMC</a></li>
+				<li><a href="index.html">Honda</a></li>
+				<li><a href="index.html">Hyundai</a></li>
+				<li><a href="index.html">Infiniti</a></li>
+				<li><a href="index.html">Jeep</a></li>
+				<li><a href="index.html">Kia</a></li>
+				<li><a href="index.html">Lexus</a></li>
+				<li><a href="index.html">Mini</a></li>
+				<li><a href="index.html">Nissan</a></li>
+				<li><a href="index.html">Porsche</a></li>
+				<li><a href="index.html">Subaru</a></li>
+				<li><a href="index.html">Toyota</a></li>
+				<li><a href="index.html">Volkswagen</a></li>
+				<li><a href="index.html">Volvo</a></li>
+			</ul>          
+          </div>
+            <div data-role="footer" data-id="foo1" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#store" data-icon="star">Store</a></li>
+                        <li><a href="#library" data-icon="grid">Library</a></li>
+                        <li><a href="#settings" data-icon="gear">Settings</a></li>
+                        <li><a href="#more" data-icon="plus"  class="ui-btn-active ui-state-persist">More</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+		</div>
+<script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </body>
 </html>
