@@ -1,5 +1,6 @@
 $(document).bind("mobileinit", function(){
 	//apply overrides here
+	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
 	$.mobile.defaultPageTransition = 'none';
 	$.mobile.transitionFallbacks.slideout = "none"
@@ -57,7 +58,9 @@ function fail(evt) {
 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
 for more details -jm */
 function onDeviceReady(){
-// do your thing!
+	navigator.splashscreen.hide();
+	document.addEventListener("backbutton", onBackClickEvent, false); // Adding the back button listener    
+
 	downloadFile();
 }
 
