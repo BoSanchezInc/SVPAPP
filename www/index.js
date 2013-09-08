@@ -58,8 +58,9 @@ function fail(evt) {
 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
 for more details -jm */
 function onDeviceReady(){
-	navigator.splashscreen.hide();
-	document.addEventListener("backbutton", onBackClickEvent, false); // Adding the back button listener    
+	alert('deviceready');
+//	navigator.splashscreen.hide();
+//	document.addEventListener("backbutton", onBackClickEvent, false); // Adding the back button listener    
 
 	downloadFile();
 }
